@@ -8,7 +8,7 @@ The Wordle game in this repository incorporates an intelligent word suggestion f
 ## Features
 
 - Intelligent word suggestion: The program suggests the best first word to guess based on statistical analysis of common English words and the alphabet frequencies.
-- Method: - Calculates the probabilities of all the letters and vowels from the words list.
-          - Uses the concept of the Lavenstein distance, which basically looks at the difference/distance between 2 words.
+- Method: -- Calculates the probabilities of all the letters and vowels from the words list.
+          -- Uses the concept of the Lavenstein distance, which basically looks at the difference/distance between 2 words.
 - Progressive word suggestions: As the player provides feedback on the letters and their positions, the program dynamically generates subsequent word suggestions that match the given criteria.
 - Limited attempts: The game allows a maximum of six attempts to guess the correct word.
