@@ -12,3 +12,4 @@ The Wordle game in this repository incorporates an intelligent word suggestion f
           -- Uses the concept of the Lavenstein distance, which basically looks at the difference/distance between 2 words.
 - Progressive word suggestions: As the player provides feedback on the letters and their positions, the program dynamically generates subsequent word suggestions that match the given criteria.
 - Limited attempts: The game allows a maximum of six attempts to guess the correct word.
+- Accuracy: Based on the trials and testing, the code gives around 73% of accuracy. 
