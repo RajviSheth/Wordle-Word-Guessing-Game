@@ -10,8 +10,8 @@ def read_file(file_name):
     :param file_name: The name of the input file
     :return: raw_data
     """
-    raw_data = pd.read_csv(file_name, header=None)
-    return raw_data
+    return pd.read_csv(file_name, header=None)
+
 
 
 class Node:
@@ -42,9 +42,7 @@ def calc_prob(raw_data):
     pattern = re.compile(r'^[a-zA-Z]+$')
 
     for word in words:
-        if type(word) != type('str'):
-            words.remove(word)
-        elif not pattern.match(word):
+        if not isinstance(word, str) or not pattern.match(word):
             words.remove(word)
     # calculating the frequency count for each alphabet occurring in how many words
     for word in words:
@@ -52,12 +50,8 @@ def calc_prob(raw_data):
         alpha_set = set([])
         for alphabet in word:
             if alphabet not in alpha_set:
-                if alphabet in alphabet_prob:
-                    alphabet_prob[alphabet] += 1
-                    alpha_set.add(alphabet)
-                else:
-                    alphabet_prob[alphabet] = 1
-                    alpha_set.add(alphabet)
+                alphabet_prob[alphabet] += alphabet in alphabet_prob
+                alpha_set.add(alphabet)
     return alphabet_prob, words
 
 
@@ -71,7 +65,6 @@ def cost_function(alphabet_prob, words):
     """
     word_probability = []
     total_words = len(words)
-    word_dict = {}
 
     for word in words:
         word = word.lower()
